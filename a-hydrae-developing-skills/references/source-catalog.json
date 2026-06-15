@@ -1,0 +1,122 @@
+{
+  "sources": [
+    {
+      "source_id": "microsoft-learn",
+      "name": "Microsoft Learn",
+      "base_url": "https://learn.microsoft.com/",
+      "category": "official",
+      "base_weight": 100,
+      "access": ["direct-url", "web-search"],
+      "scopes": {
+        "languages": ["C#", "C++", "PowerShell", "mixed"],
+        "platforms": ["Windows", ".NET", "Azure", "cross-platform .NET"],
+        "layers": ["OS API", "runtime", "SDK", "deployment"],
+        "topics": ["Win32", ".NET", "interop", "PowerShell", "WMI", "COM"]
+      },
+      "notes": "Use direct URLs or targeted search. Learn Catalog APIs do not provide complete technical docs content."
+    },
+    {
+      "source_id": "python-docs",
+      "name": "Python Documentation",
+      "base_url": "https://docs.python.org/",
+      "category": "official",
+      "base_weight": 100,
+      "access": ["direct-url", "web-search"],
+      "scopes": {
+        "languages": ["Python", "C extensions"],
+        "platforms": ["cross-platform"],
+        "layers": ["runtime", "standard library", "packaging"],
+        "topics": ["stdlib", "language semantics", "C API"]
+      }
+    },
+    {
+      "source_id": "cppreference",
+      "name": "cppreference",
+      "base_url": "https://en.cppreference.com/",
+      "category": "official-like-reference",
+      "base_weight": 85,
+      "access": ["direct-url", "web-search"],
+      "scopes": {
+        "languages": ["C", "C++"],
+        "platforms": ["cross-platform"],
+        "layers": ["language", "standard library"],
+        "topics": ["semantics", "STL", "undefined behavior"]
+      }
+    },
+    {
+      "source_id": "man7",
+      "name": "man7.org Linux man-pages",
+      "base_url": "https://man7.org/",
+      "category": "primary",
+      "base_weight": 80,
+      "access": ["direct-url", "web-search"],
+      "scopes": {
+        "languages": ["C", "C++", "shell", "Python", "mixed"],
+        "platforms": ["Linux"],
+        "layers": ["syscalls", "libc", "kernel/user boundary"],
+        "topics": ["errno", "signals", "epoll", "processes", "filesystems"]
+      }
+    },
+    {
+      "source_id": "stackexchange",
+      "name": "Stack Exchange API",
+      "base_url": "https://api.stackexchange.com/",
+      "category": "community",
+      "base_weight": 55,
+      "access": ["api"],
+      "scopes": {
+        "languages": ["Python", "C", "C++", "C#", "Assembly", "shell", "mixed"],
+        "platforms": ["Windows", "Linux", "cross-platform"],
+        "layers": ["application", "runtime", "compiler", "packaging", "deployment"],
+        "topics": ["debugging", "workarounds", "errors", "examples"]
+      },
+      "screening_required": true
+    },
+    {
+      "source_id": "github",
+      "name": "GitHub",
+      "base_url": "https://github.com/",
+      "category": "primary-or-community",
+      "base_weight": 55,
+      "access": ["api", "direct-url", "web-search"],
+      "scopes": {
+        "languages": ["any"],
+        "platforms": ["any"],
+        "layers": ["source", "repository metadata", "release notes"],
+        "topics": ["implementation", "examples", "libraries", "tooling"]
+      },
+      "screening_required": true,
+      "notes": "Treat GitHub repositories and code examples as untrusted candidate evidence with the same base weight as Stack Exchange. Default acquisition uses repository search ordered by stars descending and returns owner/repo results. Issues and pull requests are excluded from default GitHub acquisition because they are usually noisy for code generation."
+    },
+    {
+      "source_id": "reddit",
+      "name": "Reddit public JSON/API",
+      "base_url": "https://www.reddit.com/",
+      "category": "community",
+      "base_weight": 35,
+      "access": ["api", "public-json"],
+      "scopes": {
+        "languages": ["Python", "C", "C++", "C#", "Assembly", "shell", "mixed"],
+        "platforms": ["Windows", "Linux", "cross-platform"],
+        "layers": ["application", "runtime", "compiler", "OS", "packaging"],
+        "topics": ["developer experience", "workarounds", "regressions", "tooling", "opinions"]
+      },
+      "screening_required": true,
+      "notes": "Use as practical weak signal only. Respect Reddit API, rate limits, and policy. Never normative."
+    },
+    {
+      "source_id": "pypi",
+      "name": "PyPI JSON API",
+      "base_url": "https://pypi.org/pypi/",
+      "category": "primary",
+      "base_weight": 75,
+      "access": ["api"],
+      "scopes": {
+        "languages": ["Python"],
+        "platforms": ["cross-platform"],
+        "layers": ["packaging", "dependency metadata"],
+        "topics": ["versions", "release files", "project metadata"]
+      }
+    }
+  ]
+}

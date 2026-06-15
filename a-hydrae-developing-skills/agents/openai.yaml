@@ -1,0 +1,4 @@
+interface:
+  display_name: "A Hydrae Developing Skills"
+  short_description: "Source-grounded coding skill"
+  default_prompt: "Use $a-hydrae-developing-skills to research authoritative and community sources before implementing code."
